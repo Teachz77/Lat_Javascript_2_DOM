@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Manipulasi DOM</title>
+</head>
+<body>
+
+    <h1>Get a FizzBuzz Result!</h1>
+    <label for="">Type a number:</label>
+    <input type="text" id="input_form">
+    <button onclick="fizzbuzz(this)" id="btn_form">Click Here!</button>
+
+    <span id="hasil"></span>
+    
+</body>
+
+<script>
+    let input = document.getElementById("input_form");
+    let button = document.getElementById("btn_form");
+    let resultBox = document.getElementById("hasil");
+    let result;
+  
+    function fizzbuzz(n){
+        for (let i=1; i<=n; i++){
+            if (i%3===0 && i%5===0){
+                console.log("FizzBuzz");
+                result = `${i} FizzBuzz`;
+            }
+            else if (i%3===0){
+                console.log("Fizz");
+                result = `${i} Fizz`;
+            }
+            else if (i%5===0){
+                console.log("Buzz");
+                result = `${i} Buzz`;
+            }
+            else {
+                console.log(i);
+                result = `${i}`;
+            }
+        }
+    };
+
+   let clickHere = function (event){
+    event.preventDefault();
+    let number = input.value;
+    input.value="";
+
+    let clickHere = fizzbuzz(number);
+    resultBox.textContent = clickHere;
+    resultBox.innerHTML = result;
+   };
+
+   button.addEventListener("click", clickHere);
+   input.addEventListener("submit", clickHere);
+</script>
+</html>
