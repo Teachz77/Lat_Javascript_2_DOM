@@ -11,8 +11,10 @@
     <label for="">Type a number:</label>
     <input type="text" id="input_form">
     <button onclick="fizzbuzz(this)" id="btn_form">Click Here!</button>
-
-    <span id="hasil"></span>
+    <div>
+        <span id="hasil" style="font-size: 30px; "></span>
+    </div>
+    
     
 </body>
 
@@ -25,20 +27,19 @@
     function fizzbuzz(n){
         for (let i=1; i<=n; i++){
             if (i%3===0 && i%5===0){
-                console.log("FizzBuzz");
-                result = `${i} FizzBuzz`;
+                result = `FizzBuzz`;
             }
             else if (i%3===0){
-                console.log("Fizz");
-                result = `${i} Fizz`;
+                result = `Fizz`;
             }
             else if (i%5===0){
-                console.log("Buzz");
-                result = `${i} Buzz`;
+                result = `Buzz`;
+            }
+            else if (i){
+                result = `${i}`;
             }
             else {
-                console.log(i);
-                result = `${i}`;
+                result = `Invalid`;
             }
         }
     };
